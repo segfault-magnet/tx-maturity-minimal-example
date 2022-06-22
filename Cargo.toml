@@ -1,0 +1,17 @@
+[project]
+name = "maturity_minimal_example"
+version = "0.1.0"
+authors = ["Ahmed Sagdati"]
+edition = "2021"
+license = "Apache-2.0"
+
+[dependencies]
+fuels = { git = "https://github.com/FuelLabs/fuels-rs",  rev = "1f3774589b35dc8fb81c139b00b9397279af79c1" }
+fuels-abigen-macro = { git = "https://github.com/FuelLabs/fuels-rs", rev = "1f3774589b35dc8fb81c139b00b9397279af79c1" }
+
+tokio = { version = "1.12", features = ["rt", "macros"] }
+
+[[test]]
+harness = true
+name = "integration_tests"
+path = "tests/harness.rs"
