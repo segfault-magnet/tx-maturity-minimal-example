@@ -6,10 +6,16 @@ edition = "2021"
 license = "Apache-2.0"
 
 [dependencies]
-fuels = { git = "https://github.com/FuelLabs/fuels-rs",  rev = "1f3774589b35dc8fb81c139b00b9397279af79c1" }
-fuels-abigen-macro = { git = "https://github.com/FuelLabs/fuels-rs", rev = "1f3774589b35dc8fb81c139b00b9397279af79c1" }
-
+fuels = { git = "https://github.com/FuelLabs/fuels-rs", rev = "b6ac4d27b31cfeaafcce763947d5575d231bc8a6", features = ['fuel-core-lib'] }
+fuels-abigen-macro = { git = "https://github.com/FuelLabs/fuels-rs", rev = "b6ac4d27b31cfeaafcce763947d5575d231bc8a6" }
 tokio = { version = "1.12", features = ["rt", "macros"] }
+
+[dev-dependencies]
+anyhow = "1.0.58"
+
+[patch.crates-io]
+fuel-vm = { git = "https://github.com/FuelLabs/fuel-vm", rev = "6d6fe76f45bfd33348930e04cd75ac9741b46d11"}
+
 
 [[test]]
 harness = true
